@@ -1,0 +1,36 @@
+D:\SFedU\Новая папка\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.exe
+D:\SFedU\Новая папка\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.deps.json
+D:\SFedU\Новая папка\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.runtimeconfig.json
+D:\SFedU\Новая папка\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.dll
+D:\SFedU\Новая папка\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.pdb
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.AssemblyReference.cache
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.ImageCryptor.resources
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.Properties.Resources.resources
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.GenerateResource.cache
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.GeneratedMSBuildEditorConfig.editorconfig
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.AssemblyInfoInputs.cache
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.AssemblyInfo.cs
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.CoreCompileInputs.cache
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.dll
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\refint\Cryptor.dll
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.pdb
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.genruntimeconfig.cache
+D:\SFedU\Новая папка\Cryptor\Cryptor\obj\Debug\net6.0-windows\ref\Cryptor.dll
+D:\Projects\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.exe
+D:\Projects\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.deps.json
+D:\Projects\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.runtimeconfig.json
+D:\Projects\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.dll
+D:\Projects\Cryptor\Cryptor\bin\Debug\net6.0-windows\Cryptor.pdb
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.AssemblyReference.cache
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.ImageCryptor.resources
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.Properties.Resources.resources
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.GenerateResource.cache
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.AssemblyInfoInputs.cache
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.AssemblyInfo.cs
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.csproj.CoreCompileInputs.cache
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.dll
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\refint\Cryptor.dll
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.pdb
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\Cryptor.genruntimeconfig.cache
+D:\Projects\Cryptor\Cryptor\obj\Debug\net6.0-windows\ref\Cryptor.dll
