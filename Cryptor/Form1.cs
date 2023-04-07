@@ -17,11 +17,6 @@ namespace Cryptor
 
         }
 
-        private void PictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -43,7 +38,21 @@ namespace Cryptor
 
         private void PictureBox_DragEnter(object sender, DragEventArgs e)
         {
-            e.Effect = DragDropEffects.Link;
+            e.Effect = DragDropEffects.Copy;
+        }
+
+        private void PictureBox_DoubleClick(object sender, EventArgs e)
+        {
+            var od = new OpenFileDialog();
+            if(od.ShowDialog() == DialogResult.OK)
+            {
+                var data = od.FileName;
+                
+                if (data is not null)
+                {
+                    PictureBox.Image = Image.FromFile(data);
+                }
+            }
         }
     }
 }

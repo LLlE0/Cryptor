@@ -46,13 +46,13 @@
             this.PictureBox.Location = new System.Drawing.Point(10, 11);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(521, 421);
-            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 0;
             this.PictureBox.TabStop = false;
             this.PictureBox.WaitOnLoad = true;
-            this.PictureBox.Click += new System.EventHandler(this.PictureBox_Click);
             this.PictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragDrop);
             this.PictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.PictureBox_DragEnter);
+            this.PictureBox.DoubleClick += new System.EventHandler(this.PictureBox_DoubleClick);
             // 
             // ENCRYPT
             // 
@@ -113,7 +113,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
