@@ -30,8 +30,9 @@
         {
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.ENCRYPT = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.log = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.Selector = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,17 +70,16 @@
             this.ENCRYPT.UseVisualStyleBackColor = false;
             this.ENCRYPT.Click += new System.EventHandler(this.ENCRYPT_Click);
             // 
-            // richTextBox1
+            // log
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.richTextBox1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.richTextBox1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.richTextBox1.Location = new System.Drawing.Point(549, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(239, 234);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.log.BackColor = System.Drawing.SystemColors.WindowText;
+            this.log.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.log.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.log.Location = new System.Drawing.Point(549, 12);
+            this.log.Name = "log";
+            this.log.Size = new System.Drawing.Size(239, 146);
+            this.log.TabIndex = 4;
+            this.log.Text = "";
             // 
             // button1
             // 
@@ -95,6 +95,21 @@
             this.button1.Text = "DECRYPT";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // Selector
+            // 
+            this.Selector.BackColor = System.Drawing.SystemColors.Control;
+            this.Selector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Selector.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Selector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Selector.Image = global::Cryptor.Properties.Resources._31;
+            this.Selector.Location = new System.Drawing.Point(546, 176);
+            this.Selector.Name = "Selector";
+            this.Selector.Size = new System.Drawing.Size(241, 72);
+            this.Selector.TabIndex = 6;
+            this.Selector.Text = "SELECT A FILE";
+            this.Selector.UseVisualStyleBackColor = false;
+            this.Selector.Click += new System.EventHandler(this.Selector_Click);
+            // 
             // ImageCryptor
             // 
             this.AcceptButton = this.ENCRYPT;
@@ -103,8 +118,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cryptor.Properties.Resources._31;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Selector);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.log);
             this.Controls.Add(this.ENCRYPT);
             this.Controls.Add(this.PictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -120,7 +136,8 @@
 
         private PictureBox PictureBox;
         private Button ENCRYPT;
-        private RichTextBox richTextBox1;
+        private RichTextBox log;
         private Button button1;
+        private Button Selector;
     }
 }
