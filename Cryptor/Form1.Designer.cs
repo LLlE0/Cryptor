@@ -133,11 +133,10 @@
         }
 
         #endregion
-
-        private PictureBox PictureBox;
         private Button ENCRYPT;
-        private RichTextBox log;
         private Button button1;
         private Button Selector;
+        public PictureBox PictureBox;
+        public RichTextBox log;
     }
 }

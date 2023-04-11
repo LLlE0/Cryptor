@@ -9,7 +9,7 @@ namespace Cryptor
     public class Logic
     {
         //Commenting code sounds like good idea, I guess.
-        public static List<string> WriteBits(string fileName)
+        public static List<string> WriteBits(string fileName, ref Bitmap pb)
         {
             List<string> ret = new();
             using (FileStream stream = File.OpenRead(fileName))
@@ -27,6 +27,8 @@ namespace Cryptor
                     {
                         //Converting whole byte into a string
                         ret.Add(Convert.ToString(buffer[0], 2).PadLeft(8, '0'));
+                        //Main giant logic function
+                        DoMagic(ret[i], ref pb);
                     }
                     i++;
                 } while (bytesRead > 0);
@@ -34,5 +36,12 @@ namespace Cryptor
             return ret;
         }
 
+        //DoMagic
+        public static bool DoMagic(string s, ref Bitmap pb)
+        {
+            return true;
+        }
     }
+
+    
 }

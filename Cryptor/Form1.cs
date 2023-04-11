@@ -32,7 +32,7 @@ namespace Cryptor
                 {
                     log.Text = new("(" + DateTime.Now.ToString("hh:mm:ss") + ") " + "Error: The picture is too small!");
                 }
-                var v = Logic.WriteBits(FileNameToEncrypt);
+                var v = Logic.WriteBits(FileNameToEncrypt, ref pic);
                 foreach (string z in v)
                 {
                     log.Text += z;
