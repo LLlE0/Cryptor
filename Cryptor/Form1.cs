@@ -1,9 +1,11 @@
+using System.IO;
+using System.Windows.Forms.Design;
+
 namespace Cryptor
 {
     public partial class ImageCryptor : Form
     {
-        string FileNameToEncrypt="";
-        string Pic="";
+        string? FileNameToEncrypt="";
 
         public ImageCryptor()
         {
@@ -17,9 +19,29 @@ namespace Cryptor
 
         private void ENCRYPT_Click(object sender, EventArgs e)
         {
-            var pic = new Bitmap(PictureBox.Image);
-            log.Text=pic.Width.ToString() +" "+ pic.Height.ToString();
-            log.Text = pic.GetPixel(100, 100).A.ToString() + " " + pic.GetPixel(0, 0).B.ToString();
+            if (FileNameToEncrypt == "" || !File.Exists(FileNameToEncrypt))
+            {
+                log.Text = "Error: Select a file to encrypt!";
+                return;
+            }
+            if (PictureBox.Image is not null)
+            {
+                FileStream file = File.OpenRead(FileNameToEncrypt);
+                var pic = new Bitmap(PictureBox.Image);
+                if (pic.Width*pic.Height*4 < file.Length/2)
+                {
+                    log.Text = new("(" + DateTime.Now.ToString("hh:mm:ss") + ") " + "Error: The picture is too small!");
+                }
+                var v = Logic.WriteBits(FileNameToEncrypt);
+                foreach (string z in v)
+                {
+                    log.Text += z;
+                }
+            }
+            else
+            {
+                log.Text = "Error: The Picture Box is empty!"; 
+            };
         }
 
         private void PictureBox_DragDrop(object sender, DragEventArgs e)

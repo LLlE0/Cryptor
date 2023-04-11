@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PictureBox.BackColor = System.Drawing.SystemColors.ControlText;
-            this.PictureBox.BackgroundImage = global::Cryptor.Properties.Resources.Безымянный1;
+            this.PictureBox.BackgroundImage = global::Cryptor.Properties.Resources._1;
             this.PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PictureBox.Location = new System.Drawing.Point(10, 11);
             this.PictureBox.Name = "PictureBox";
