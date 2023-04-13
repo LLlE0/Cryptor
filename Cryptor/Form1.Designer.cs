@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageCryptor));
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.ENCRYPT = new System.Windows.Forms.Button();
             this.log = new System.Windows.Forms.RichTextBox();
@@ -124,6 +125,7 @@
             this.Controls.Add(this.ENCRYPT);
             this.Controls.Add(this.PictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageCryptor";
             this.Text = "Image Cryptor v1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
