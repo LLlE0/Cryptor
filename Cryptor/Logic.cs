@@ -158,8 +158,8 @@ namespace Cryptor
                     ind++;
                     if (ind % 8 == 0)
                     {
-                        convert = $"{bits[0]}{bits[1]}{bits[2]}{bits[3]}{bits[4]}{bits[5]}{bits[6]}{bits[7]}";
-                        fileStream.Write(ConvertToBytes(convert), 0, 8);
+                        convert = $"{bits[7]}{bits[6]}{bits[5]}{bits[4]}{bits[3]}{bits[2]}{bits[1]}{bits[0]}";
+                        fileStream.Write(ConvertToBytes(convert), 0, 1);
                     }
                 }
             }
