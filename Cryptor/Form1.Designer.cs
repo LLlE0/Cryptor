@@ -32,7 +32,7 @@
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.ENCRYPT = new System.Windows.Forms.Button();
             this.log = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DECRYPT = new System.Windows.Forms.Button();
             this.Selector = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -82,19 +82,20 @@
             this.log.TabIndex = 4;
             this.log.Text = "";
             // 
-            // button1
+            // DECRYPT
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(20)))), ((int)(((byte)(192)))));
-            this.button1.Image = global::Cryptor.Properties.Resources._31;
-            this.button1.Location = new System.Drawing.Point(547, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(241, 76);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "DECRYPT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.DECRYPT.BackColor = System.Drawing.SystemColors.Control;
+            this.DECRYPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DECRYPT.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DECRYPT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(20)))), ((int)(((byte)(192)))));
+            this.DECRYPT.Image = global::Cryptor.Properties.Resources._31;
+            this.DECRYPT.Location = new System.Drawing.Point(547, 356);
+            this.DECRYPT.Name = "DECRYPT";
+            this.DECRYPT.Size = new System.Drawing.Size(241, 76);
+            this.DECRYPT.TabIndex = 5;
+            this.DECRYPT.Text = "DECRYPT";
+            this.DECRYPT.UseVisualStyleBackColor = false;
+            this.DECRYPT.Click += new System.EventHandler(this.DECRYPT_Click);
             // 
             // Selector
             // 
@@ -120,7 +121,7 @@
             this.BackgroundImage = global::Cryptor.Properties.Resources._31;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Selector);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DECRYPT);
             this.Controls.Add(this.log);
             this.Controls.Add(this.ENCRYPT);
             this.Controls.Add(this.PictureBox);
@@ -136,7 +137,7 @@
 
         #endregion
         private Button ENCRYPT;
-        private Button button1;
+        private Button DECRYPT;
         private Button Selector;
         public PictureBox PictureBox;
         public RichTextBox log;

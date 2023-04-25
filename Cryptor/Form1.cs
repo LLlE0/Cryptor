@@ -1,5 +1,7 @@
+using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms.Design;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace Cryptor
 {
@@ -32,11 +34,21 @@ namespace Cryptor
                 {
                     log.Text = new("(" + DateTime.Now.ToString("hh:mm:ss") + ") " + "Error: The picture is too small!");
                 }
-                var v = Logic.WriteBits(FileNameToEncrypt, ref pic);
-                foreach (string z in v)
+                if (Logic.WriteBits(FileNameToEncrypt, ref pic))
                 {
-                    log.Text += z;
+                    using (MemoryStream memory = new MemoryStream())
+                    {
+                        string SaveFilePath = new(Path.GetDirectoryName(FileNameToEncrypt)+"\\" + Path.GetFileNameWithoutExtension(FileNameToEncrypt) + "_CryptedFile" + DateTime.Now.ToString("hh-mm-ss") + ".png");
+                        using (FileStream fs = new FileStream(SaveFilePath, FileMode.Create, FileAccess.ReadWrite))
+                        {
+                            pic.Save(memory, ImageFormat.Jpeg);
+                            byte[] bytes = memory.ToArray();
+                            fs.Write(bytes, 0, bytes.Length);
+                        }
+                    }
                 }
+                else log.Text = new("(" + DateTime.Now.ToString("hh:mm:ss") + "Unknown error!");
+                
             }
             else
             {
@@ -69,7 +81,7 @@ namespace Cryptor
             if (od.ShowDialog() == DialogResult.OK)
             {
                 var data = od.FileName;
-                
+                FileNameToEncrypt = data; ///?????/
                 if (data is not null)
                 {
                     PictureBox.Image = Image.FromFile(data);
@@ -91,6 +103,14 @@ namespace Cryptor
                     log.Text = "(" + DateTime.Now.ToString("hh:mm:ss") + ") selected a file to encrypt: " + data;
                 }
             }
+        }
+
+        private void DECRYPT_Click(object sender, EventArgs e)
+        { 
+            var pic = new Bitmap(PictureBox.Image);
+            var str = Path.GetDirectoryName(FileNameToEncrypt) + "\\Decr" + DateTime.Now.ToString("hh-mm-ss");
+            Logic.ReadBits(str, ref pic);
+            log.Text = "(" + DateTime.Now.ToString("hh:mm:ss") + $") File {str} was successfully saved!";
         }
     }
 }
