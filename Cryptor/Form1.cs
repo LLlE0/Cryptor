@@ -109,7 +109,7 @@ namespace Cryptor
         { 
             var pic = new Bitmap(PictureBox.Image);
             var str = Path.GetDirectoryName(FileNameToEncrypt) + "\\Decr" + DateTime.Now.ToString("hh-mm-ss");
-            Logic.ReadBits(str, ref pic);
+            Logic.WriteBitsToFile(str, ref pic);
             log.Text = "(" + DateTime.Now.ToString("hh:mm:ss") + $") File {str} was successfully saved!";
         }
     }

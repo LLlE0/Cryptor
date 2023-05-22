@@ -29,40 +29,7 @@ namespace Cryptor
     }
     public class Logic
     {
-        static int NIGS = 1;
-        //Commenting code sounds like good idea, I guess.
-        public static bool WriteBits(string fileName, ref Bitmap pb)
-        {
-            string S;
-            using (FileStream stream = File.OpenRead(fileName))
-            {
-                byte[] buffer = new byte[1];
-                
-                int i = 0;
-                int bytesRead = 0;
-                Point z = new Point(0, 0);
-                do
-                {
-                    //reading file byte-by-byte
-                    bytesRead = stream.Read(buffer, 0, buffer.Length);
-                    if (bytesRead > 0)
-                    {
-                        //Converting whole byte into a string
-                        S = Convert.ToString(buffer[0], 2).PadLeft(8, '0');
-                        //Main giant logic function to encrypt
-                        if (Encryptor(S, ref pb, ref z)) break;
-                    }
-                    i++;
-                   
-                } while (bytesRead > 0);
-                pb.SetPixel(z.H, z.W + 1, Color.FromArgb(0, 253, 0));
-            }
-            return true;
-        }
 
-
-        //Function that encrypts bit-by-bit
-        //Looks awful, but i guess it is absolutely readable.
         public static bool EncryptNextBit(ref Bitmap pb, Point z, int a, int strategy)
         {
             Color pix = pb.GetPixel(z.W, z.H);
@@ -104,26 +71,7 @@ namespace Cryptor
             return (pb.Width == z.W + 1);
 
         }
-        //Encryptor
-        public static bool Encryptor(string s, ref Bitmap pb, ref Point z)
-        {
-            for (int i = 0; i < 8; i++)
-            {
-                if (EncryptNextBit(ref pb, z, s[i], NIGS % 3))
-                {
-                    z.W = 0;
-                    z.H++;
-                    if (z.H > pb.Height) return true;
-                }
-                else
-                {
-                    z.W++;
-                }
-                NIGS++;
-            }
-            NIGS %= 3;
-            return false;
-        }
+
 
         public static byte[] ConvertToBytes(string b)
         {
@@ -135,11 +83,12 @@ namespace Cryptor
             return ret;
         }
 
-        public static bool ReadBits(string s, ref Bitmap pb)
+        public static bool WriteBitsToFile(string s, ref Bitmap pb)
         {
+            int tx, ty;
             int strategy = 0;
             string convert="";
-            int[] bits = {0,0,0,0,0,0,0,0};
+            int[] bits = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
             ulong ind=0;
             var fileStream = new FileStream(s, FileMode.Create);
             int[] colors = { 1, 2, 3 };
@@ -153,13 +102,14 @@ namespace Cryptor
                     if (colors[0] == 0 && colors[1] == 253 && colors[2] == 0)
                     { fileStream.Close(); return true;  }
                     int data = colors[strategy % 3] % 2;
-                    bits[ind % 8] = data;
+                    bits[ind % 16] = data;
                     strategy++;
                     ind++;
-                    if (ind % 8 == 0)
+                    if (ind % 16 == 0)
                     {
-                        convert = $"{bits[7]}{bits[6]}{bits[5]}{bits[4]}{bits[3]}{bits[2]}{bits[1]}{bits[0]}";
-                        fileStream.Write(ConvertToBytes(convert), 0, 1);
+                        convert = $"{bits[15]}{bits[14]}{bits[13]}{bits[12]}{bits[11]}{bits[10]}{bits[9]}{bits[8]}{bits[7]}{bits[6]}{bits[5]}{bits[4]}{bits[3]}{bits[2]}{bits[1]}{bits[0]}";
+                        fileStream.Write(ConvertToBytes(convert), 0, 2);
+                        ind = 0;
                     }
                 }
             }
